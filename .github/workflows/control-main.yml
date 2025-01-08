@@ -16,7 +16,7 @@ on:
 
 jobs:
   docker-actions:
-    runs-on: ubuntu-latest
+    runs-on: dev-stage
 
     steps:
       # Checkout the repository
