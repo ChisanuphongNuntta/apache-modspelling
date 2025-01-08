@@ -1,0 +1,51 @@
+@media only screen and (max-width:992px) {
+    .pt-sm {
+        padding-top: 15px;
+    }
+}
+
+.bg-secondary {
+    background-color: #6c757d !important;
+}
+
+/* #00a652; */
+ 
+.calendar-body ul {
+    list-style: none;
+    flex-wrap: wrap;
+    display: flex;
+    text-align: center;
+}
+ 
+.calendar-body li {
+    width: calc(100% / 7);
+    font-size: 1.07rem;
+    color: #414141;
+}
+ 
+.calendar-body .calendar-weekdays li {
+    cursor: default;
+    font-weight: 800;
+    padding: 5px;
+}
+ 
+.calendar-body .calendar-dates li {
+    padding: 10px;
+}
+ 
+.calendar-dates li.inactive {
+    color: #aaaaaa70;
+    background-color: #aaaaaa0c;
+}
+
+.ldmap_placeholder .ldmap_zoombar_mini .ldmap_zoomin {
+    display: flex !important;
+}
+
+.calendar-dates li:not(.active):not(.inactive):hover {
+    background-color: #8080803f;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #8080803f !important;
+}

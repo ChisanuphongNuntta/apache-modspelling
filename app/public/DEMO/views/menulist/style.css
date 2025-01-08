@@ -1,0 +1,11 @@
+@media only screen and (max-width: 1400px) {
+    .width-btn-custom {
+        width: auto !important;
+    }
+}
+
+@media (min-width: 1401px) {
+    .width-btn-custom {
+        width: 20% !important;
+    }
+}

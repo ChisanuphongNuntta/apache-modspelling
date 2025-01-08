@@ -1,0 +1,132 @@
+.txt-CardCode-color div button {
+    background-color: transparent !important;
+    border: 1px solid #eee !important;
+}
+
+.ldmap_placeholder .ldmap_zoombar_mini .ldmap_zoomin {
+    display: flex !important;
+}
+
+/* $(".dropdown-menu").css({ 
+    'position' : '', 
+    'margin' : '', 
+    'transform' : '', 
+    'inset' : '' 
+}); */
+
+.clearfix::after,
+.calendar ol::after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* ================
+Calendar Styling */
+.calendar {
+    border-radius: 10px;
+}
+
+.month {
+    font-size: 2rem;
+}
+
+@media (min-width: 992px) {
+.month {
+    font-size: 3.5rem;
+}
+}
+
+.calendar ol li {
+    float: left;
+    width: 14.28571%;
+}
+
+.calendar .day-names {
+    border-bottom: 1px solid #eee;
+}
+
+.calendar .day-names li {
+    font-weight: 600;
+}
+
+.calendar .days li {
+    border-bottom: 1px solid #eee;
+    min-height: 8rem;
+}
+
+.calendar .days li .date {
+    margin: 0.5rem 0.25rem;
+}
+
+.calendar .days li .event {
+    font-size: 0.75rem;
+    margin: 0rem 0.25rem;
+    padding: 0.25rem 0.4rem;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 1rem;
+    margin-bottom: 1px;
+}
+.calendar .days li.outside {
+    background-color: #FAFAFA;
+}
+.calendar .days li .date:hover, td.lead:hover {
+    cursor: pointer;
+}
+td.lead:hover {
+    background-color: rgba(0,0,0,.05);
+}
+
+.calendar .days li:not(.outside):hover {
+    background-color: rgba(0,0,0,.05);
+}
+
+.calendar .days li .event:hover {
+    cursor: pointer;
+}
+
+.calendar .days li .event.event-more {
+    border: 1px solid #00a652;
+    background-color: rgba(255,255,255,1);
+    color: #00a652;
+}
+
+.calendar .days li .event.span-2 {
+    width: 200%;
+}
+
+.calendar .days li .event.begin {
+    border-radius: 1rem 0 0 1rem;
+}
+
+.calendar .days li .event.end {
+    border-radius: 0 1rem 1rem 0;
+}
+
+.calendar .days li .event.clear {
+    background: none;
+}
+
+.calendar .days li:nth-child(n+36) {
+    border-bottom: none;
+}
+
+.calendar .days li.outside .date {
+    color: #ddd;
+}
+
+.MeetType0 { text-align: left; background-color: #666666; }
+.MeetType1 { text-align: left; background-color: #048f43; }
+.MeetType2 { text-align: left; background-color: #f08935; }
+.MeetType5 { text-align: left; background-color: #295dd6; }
+.MeetType6 { text-align: left; background-color: #e8c825; }
+.MeetType7 { text-align: left; background-color: #24a2d4; }
+.MeetType8 { text-align: left; background-color: #6d24d4; }
+.today { background-color: rgba(0, 166, 82, 0.22); }
+.calendar .days li.today:hover { background-color: rgba(0, 166, 82, .30); }
+.today .date, .today td.lead { font-weight: bold; color: #00a652; }

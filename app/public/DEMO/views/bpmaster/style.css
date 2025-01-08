@@ -1,0 +1,22 @@
+.search-color div button {
+    background-color: transparent !important;
+    border: transparent !important;
+    padding: 0.2rem 1.5rem 0.2rem 1.5rem !important;
+}
+
+.search-color-hover {
+    /* background-color: #00a652; */
+    padding-left: 15px;
+}
+
+/* div .search-color-hover:hover {
+    background-color: #048544;
+} */
+
+.table-primary {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.ldmap_placeholder .ldmap_zoombar_mini .ldmap_zoomin {
+    display: flex !important;
+}

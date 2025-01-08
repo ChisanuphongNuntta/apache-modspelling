@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>EUROX FORCE</title>
+    <link href="../css/main/app.css" rel="stylesheet" />
+    <link href="../image/logo/favicon_96.jpg" rel="shortcut icon" type="image/png" />
+    <script src="https://kit.fontawesome.com/3288009746.js" crossorigin="anonymous"></script>
+    <script src="../js/jquery-min.js" type="text/javascript"></script>
+    <style rel="stylesheet" type="text/css">
+        .eurox-logo {
+            width: 100% !important;
+            max-width: 320px !important;
+        }
+        .pin-login {
+            display: inline-block;
+            border-radius: 10px;
+            padding: 10px;
+            width: 100%;
+            font-size: 36px;
+            user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            
+        }
+        .pin-login__text {
+            margin: 10px auto 10px auto;
+            padding: 5px;
+            display: block;
+            width: 75%;
+            text-align: center;
+            letter-spacing: 0.2em;
+            background-color: rgba(0, 0, 0, 0.25);
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            cursor: default;
+            color: #FFF;
+            border: 1px solid #495057;
+        }
+
+        .pin-login__user {
+            margin: 10px auto 10px auto;
+            padding: 10px;
+            display: block;
+            width: 75%;
+            font-size: 0.55em;
+            background-color: rgba(0, 0, 0, 0.25);
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            cursor: default;
+            color: #FFF;
+            border: 1px solid #495057;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image:
+                linear-gradient(45deg, transparent 50%, #495057 50%),
+                linear-gradient(135deg, #495057 50%, transparent 50%),
+                linear-gradient(to right, #495057, #495057);
+            background-position:
+                calc(100% - 25px) calc(1em + 0px),
+                calc(100% - 17px) calc(1em + 0px),
+                calc(100% - 2.5em) 0.5em;
+            background-size:
+                8px 8px,
+                8px 8px,
+                1px 1.5em;
+            background-repeat: no-repeat;
+        }
+
+        .pin-login__user:focus {
+            background-image:
+                linear-gradient(45deg, #CCC 50%, transparent 50%),
+                linear-gradient(135deg, transparent 50%, #CCC 50%),
+                linear-gradient(to right, #495057, #495057);
+            background-position:
+                calc(100% - 17px) 1em,
+                calc(100% - 25px) 1em,
+                calc(100% - 2.5em) 0.5em;
+            background-size:
+                8px 8px,
+                8px 8px,
+                1px 1.5em;
+            background-repeat: no-repeat;
+        }
+
+        .pin-login__user.pin-login__user--error {
+            background-image:
+                linear-gradient(45deg, transparent 50%, #ea868f 50%),
+                linear-gradient(135deg, #ea868f 50%, transparent 50%),
+                linear-gradient(to right, #842029, #495057);
+        }
+
+        .pin-login__user option {
+            background-color: #FFF;
+            color: #515151;
+        }
+
+
+        .pin-login__text--error, .pin-login__user--error {
+            color: #ea868f;
+            background-color: #2c0b0e;
+            animation-name: loginError;
+            animation-duration: 0.1s;
+            animation-iteration-count: 2;
+            border: 1px solid #842029;
+        }
+
+        @keyframes loginError {
+            25% { transform: translateX(-3px); }
+            75% { transform: translateX(3px); }
+        }
+
+        @-moz-keyframes loginError {
+            25% { transform: translateX(-3px); }
+            75% { transform: translateX(3px); }
+        }
+
+        .pin-login__key {
+            width: 72px;
+            height: 72px;
+            margin: 10px;
+            background-color: rgba(0, 0, 0, 0.25);
+            color: #FFF;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .pin-login__key:active {
+            /* background-color: rgba(0, 0, 0, 0.25); */
+            background-color: #2c0b0e;
+            color: #ea868f;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- PUT CONTENT BELOW HERE --> 
+        <div class="container-fluid justify-content-center d-flex align-items-center" style="height: 100vh; background-color: #57070b;">
+            <div class="row">
+                <div class="rounded p-4"">
+                    <div class="text-center">
+                        <img src="../image/logo/eurox_force_2.png" class="eurox-logo" />
+                    </div>
+                    <div class="pin-login" id="mainPinLogin">
+                        <!-- <select class="pin-login__user" id="txt_usnm"> -->
+                        <select class="pin-login__user" id="txt_usnm">
+                            <option value="" selected disabled>กรุณาเลือก</option>
+                            <option value="pisit">คุณพิสิษฐ์</option>
+                            <option value="palm">คุณพีรัช</option>
+                            <option value="ponga">คุณพัทธภูมิ</option>
+                            <option value="gift">คุณพิจิตรา</option>
+                        </select>
+                        <input type="password" class="pin-login__text" id="txt_pswd" readonly />
+                        <div class="pin-login__numpad text-center">
+                        </div>
+                    </div>
+                </div>  
+                <div class="col-lg-12 text-center text-white my-4">
+                    <i class="far fa-copyright fa-fw fa-1x"></i> <span id="copy_year"></span> บจ. คิงบางกอก อินเตอร์เทรด สงวนลิขสิทธิ์<br/>
+                    <small>Craft with <i class="fas fa-heart fa-fw fa-1x text-danger"></i> by IT Software Team.</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL ALERT -->
+    <div class="modal fade" id="alert_modal" data-bs-backdrop="static" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h5 class="modal-title" id="alert_header"></h5>
+                    <p id="alert_body" class="my-4"></p>
+                    <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">ตกลง</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/app.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        class PinLogin {
+            constructor ({el, loginEndpoint, maxNumbers = Infinity}) {
+                this.el = {
+                    main: el,
+                    numPad: el.querySelector(".pin-login__numpad"),
+                    textDisplay: el.querySelector(".pin-login__text")
+                };
+
+                this.loginEndpoint = loginEndpoint;
+                this.maxNumbers = maxNumbers;
+                this.value = "";
+
+                this._generatePad();
+                this._ClearErr();
+            }
+
+            _generatePad() {
+                const padLayout = [
+                    "1", "2", "3",
+                    "4", "5", "6",
+                    "7", "8", "9",
+                    "<i class='fas fa-backspace'></i>", "0", "<i class='fas fa-check'></i>"
+                ];
+
+                padLayout.forEach(key => {
+                    const insertBreak = key.search(/[369]/) !== -1;
+                    const keyEl = document.createElement("div");
+                    
+
+                    keyEl.classList.add("pin-login__key");
+                    keyEl.innerHTML = key;
+                    keyEl.addEventListener("click", () => { this._handleKeyPress(key) });
+                    this.el.numPad.appendChild(keyEl);
+                    if (insertBreak) {
+                        this.el.numPad.appendChild(document.createElement("br"));
+                    }
+                });
+            }
+
+            _ClearErr() {
+               $(".pin-login__user").click(function() {
+                    $(".pin-login__user").removeClass("pin-login__user--error");
+                    $(".pin-login__text").removeClass("pin-login__text--error");
+               });
+            }
+
+            _handleKeyPress(key) {
+                switch (key) {
+                    case "<i class='fas fa-backspace'></i>":
+                        this.value = this.value.substring(0, this.value.length - 1);
+                        break;
+                    case "<i class='fas fa-check'></i>":
+                        this._attemptLogin();
+                        break;
+                    default:
+                        if (this.value.length < this.maxNumbers && !isNaN(key)) {
+                            this.value += key;
+                        }
+                        break;
+                }
+
+                this._updateValueText();
+            }
+
+            _updateValueText() {
+                this.el.textDisplay.value = "_".repeat(this.value.length);
+                $(".pin-login__user").removeClass("pin-login__user--error");
+                $(".pin-login__text").removeClass("pin-login__text--error");
+            }
+
+            _attemptLogin() {
+                var usnm = $("#txt_usnm").val();
+                if(usnm == null) {
+                    $("#alert_header").html("<i class=\"far fa-times-circle fa-fw fa-lg text-danger\"></i> พบข้อผิดพลาด!");
+                    $("#alert_body").html("กรุณาเลือกชื่อผู้ใช้งาน!");
+                    $("#alert_modal").modal('show');
+                } else {
+                    if (this.value.length > 0) {
+                        $("#alert_header").html("");
+                        $("#alert_body").html("<i class=\"fas fa-spinner fa-pulse fa-lg\"></i> กรุณารอสักครู่...");
+                        $("#alert_modal").modal('show');
+                        $.ajax({
+                            url: this.loginEndpoint,
+                            type: "POST",
+                            data: { usnm: usnm, pswd: this.value },
+                            success: function(result) {
+                                var obj = jQuery.parseJSON(result);
+                                $.each(obj, function(key, inval) {
+                                    if(inval['Result'] == 1) {
+                                        window.location = "main.php?p=salekpi";
+                                    } else {
+                                        $(".pin-login__user").addClass("pin-login__user--error");
+                                        $(".pin-login__text").addClass("pin-login__text--error");
+                                        $("#alert_header").html("<i class=\"far fa-times-circle fa-fw fa-lg text-danger\"></i> พบข้อผิดพลาด!");
+                                        $("#alert_body").html("กรุณาระบุชื่อผู้ใช้งานหรือกรอกรหัสผ่านให้ถูกต้อง!");
+                                        $("#alert_modal").modal('show');
+                                    }
+                                });
+                            }
+                        })
+                    } else {
+                        $("#alert_header").html("<i class=\"far fa-times-circle fa-fw fa-lg text-danger\"></i> พบข้อผิดพลาด!");
+                        $("#alert_body").html("กรุณากรอกรหัสผ่าน!");
+                        $("#alert_modal").modal('show');
+                    }
+                }
+                
+            }
+        }
+
+        new PinLogin({
+            el: document.getElementById("mainPinLogin"),
+            loginEndpoint: "../core/takelogin.core.php",
+            maxNumbers: 6
+        })
+    </script>
+  </body>
+</html>

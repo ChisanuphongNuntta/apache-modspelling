@@ -1,0 +1,11 @@
+<?php session_start();
+require_once("../../core/functions.core.php");
+if(!isset($_SESSION['UKEY'])) { echo "<script type='text/javascript'>window.location=\"../../\"</script>"; exit(); }
+$JSON  = array();
+$inval = array();
+
+
+
+array_push($JSON,$inval);
+echo json_encode($JSON);
+?>

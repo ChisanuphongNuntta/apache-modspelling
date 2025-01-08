@@ -1,0 +1,113 @@
+.theme-color-red{
+    --bs-primary: #6b8b1e !important;
+    --bs-primary-shade-20: #7da51f !important;
+    --bs-primary-tint-40: #7da51f !important;
+    --bs-primary-tint-90: #f2f8e4 !important;
+    --bs-primary-tint-80: #c3cab1 !important;
+}
+
+.nav{
+    --bs-nav-link-color: #6b8b1e !important;
+    --bs-nav-link-hover-color: #7da51f !important;
+}
+
+.search-color-hover {
+    background-color: #6b8b1e;
+    padding-left: 15px;
+}
+
+div .search-color-hover:hover {
+    background-color: #7da51f;
+}
+
+.loader.simple-loader .loader-body {
+    background: url(../images/loader_site_0.gif) no-repeat scroll center center !important;
+}
+
+.form-control-sm {
+    font-size: 14px !important;
+}
+
+::selection {
+    background-color: #6b8b1e;
+    color: #FFF;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, .75);
+}
+
+::-webkit-scrollbar-track
+{
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+    height: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+.btn-secondary{
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover{
+    background-color: #5A5A5A;
+    border-color: #6c757d;
+}
+
+label {
+    font-weight: 600;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+table.table thead th {
+    font-weight: bolder;
+}
+
+table.table { font-size: 14px; }
+
+.modal .modal-full {
+    max-width: 94%
+}
+
+.paginate_button.current {
+    background-color: #6b8b1e !important;
+}
+
+.paginate_button:active {
+    background-color: #6b8b1e !important;
+}
+
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-dates li.active {
+    color: #fff;
+    background-color: #6b8b1e;
+}
+ 

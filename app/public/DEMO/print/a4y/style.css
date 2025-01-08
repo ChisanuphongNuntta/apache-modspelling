@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@200;300;400;500;600&display=swap');
+html, body {
+    background-color: #FFFFFF;
+    font-family: 'Sarabun';
+    font-weight: 400;
+    color: #000 !important;
+    font-size: 11px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #000;
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+}
+.table-bordered.border-dark tbody,
+.OrderList.table.border-dark tbody, 
+.OrderList.table.border-dark tfoot
+    {
+    border-color: #212529 !important;
+}
+.OrderList.table.border-dark tbody tr td, 
+.OrderList.table.border-dark tfoot tr th, 
+.OrderList.table.border-dark tfoot tr td
+{
+    border: 0px;
+}
+.OrderList.table.border-dark tfoot tr:last-child th, 
+.OrderList.table.border-dark tfoot tr:last-child td
+{
+    border-top: 1px solid #212529 !important;
+    border-bottom: 3px double #212529 !important;
+}
+.page {
+    width: 210mm;
+    height: 297mm;
+    display: block;
+    margin: 3mm auto;
+    padding: 3mm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+@page {
+    size: A4;
+    margin: 0;
+}
+@media print {
+    .page {
+        height: initial;
+        margin: 0mm auto;
+        box-shadow: 0 0 0;
+        page-break-after: always;
+    }
+}
+
+.table thead tr {
+    background-color: transparent !important;
+}
+
+th { padding: 6px !important; }
+td { padding: 6px !important; }

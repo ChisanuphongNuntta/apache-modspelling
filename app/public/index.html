@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>EUROX FORCE</title>
+    <link href="css/main/app.css" rel="stylesheet" />
+    <link href="image/logo/favicon_96.jpg" rel="shortcut icon" type="image/png" />
+    <script src="https://kit.fontawesome.com/3288009746.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-min.js" type="text/javascript"></script>
+    <style rel="stylesheet" type="text/css">
+        .eurox-logo {
+            width: 100% !important;
+            max-width: 320px !important;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- PUT CONTENT BELOW HERE --> 
+    <div class="container-fluid justify-content-center d-flex align-items-center bg-dark" style="height: 100vh;">
+      <div class="row">
+        <div>
+          <div class="col-lg-12 rounded p-4" style="background-color: #9a1118;">
+              <img src="image/logo/eurox_force_2.png" class="eurox-logo" />
+              <form id="login_form" class="mt-4">
+                  <div class="form-group position-relative has-icon-left mb-3">
+                      <input type="text" name="text_username" class="form-control form-control-xl" placeholder="ชื่อผู้ใช้">
+                      <div class="form-control-icon">
+                          <i class="fas fa-user"></i>
+                      </div>
+                  </div>
+                  <div class="form-group position-relative has-icon-left mb-3">
+                      <input type="password" name="text_password" class="form-control form-control-xl" placeholder="รหัสผ่าน">
+                      <div class="form-control-icon">
+                          <i class="fas fa-lock"></i>
+                      </div>
+                  </div>
+                  <button type="submit" class="btn btn-block btn-lg btn-secondary shadow-lg mt-2 text-light" >เข้าสู่ระบบ</button>
+              </form>
+            </div>  
+            <div class="col-lg-12 text-center text-white my-4">
+                <i class="far fa-copyright fa-fw fa-1x"></i> <span id="copy_year"></span> บจ. คิงบางกอก อินเตอร์เทรด สงวนลิขสิทธิ์<br/>
+                <small>Craft with <i class="fas fa-heart fa-fw fa-1x text-danger"></i> by IT Software Team.</small>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MODAL ALERT -->
+    <div class="modal fade" id="alert_modal" data-bs-backdrop="static" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h5 class="modal-title" id="alert_header"></h5>
+                    <p id="alert_body" class="my-4"></p>
+                    <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">ตกลง</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("input[name='text_username']").focus();
+            var current_year = new Date().getFullYear();
+            $("#copy_year").html(current_year);
+            $("#login_form").on("submit", function(e) {
+                e.preventDefault();
+                // $("#alert_header").html("<i class=\"far fa-bell fa-fw fa-lg text-danger\"></i> แจ้งเตือน!");
+                // $("#alert_body").html("ขณะนี้กำลังปิดปรับปรุงระบบ!<br>ขออภัยในความไม่สะดวก");
+                // $("#alert_modal").modal('show');
+                
+                var usnm = $("input[name='text_username']").val();
+                var pswd = $("input[name='text_password']").val();
+                if(usnm == "" || pswd == "") {
+                    $("#alert_header").html("<i class=\"far fa-times-circle fa-fw fa-lg text-danger\"></i> พบข้อผิดพลาด!");
+                    $("#alert_body").html("กรุณากรอกข้อมูลให้ครบถ้วน!");
+                    $("#alert_modal").modal('show');
+                } else {
+                    $("#alert_header").html("");
+                    $("#alert_body").html("<i class=\"fas fa-spinner fa-pulse fa-lg\"></i> กรุณารอสักครู่...");
+                    $("#alert_modal").modal('show');
+                    $.ajax({
+                        url: 'core/takelogin.core.php',
+                        type: 'POST',
+                        data: { usnm: usnm, pswd: pswd },
+                        success: function(result) {
+                            var obj = jQuery.parseJSON(result);
+                            $.each(obj,function(k,doc) {
+                                if(obj[0]['Result'] == "1") {
+                                    var redirect = "";
+                                    switch(obj[0]['goto']) {
+                                        //case 'SAL': redirect = "https://192.168.1.13:443"; break;
+                                        case 'KSY': redirect = "/ksy/main.php"; break;
+                                        //case 'SAL' : redirect = "https://euroxforce.com:30443/core/takelogin.core.php?usnm="+obj[0]['usnm']+"&pswd="+obj[0]['pswd']; break;
+                                        default: redirect = "/kbi/main.php"; break;
+                                    }
+                                    window.location = redirect;
+                                } else {
+                                    $("#alert_header").html("<i class=\"far fa-times-circle fa-fw fa-lg text-danger\"></i> พบข้อผิดพลาด!");
+                                    $("#alert_body").html("กรุณากรอกชื่อผู้ใช้งานหรือรหัสผ่านให้ถูกต้อง!");
+                                    $("#alert_modal").modal('show');
+                                }
+                            });
+                        }
+                    });
+                }
+                
+            });
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;800&display=swap');
+
+/* Main styles */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+
+.text {
+  fill: none;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-dasharray: 70 330;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke 6s infinite linear;
+  animation: stroke 6s infinite linear;
+}
+
+.text:nth-child(5n+1) {
+  stroke: #FF0000;
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s;
+}
+
+.text:nth-child(5n+2) {
+  stroke: #00ff95;
+  -webkit-animation-delay: -2.4s;
+  animation-delay: -2.4s;
+}
+
+.text:nth-child(5n+3) {
+  stroke: #00ffea;
+  -webkit-animation-delay: -3.6s;
+  animation-delay: -3.6s;
+}
+
+.text:nth-child(5n+4) {
+  stroke: #ebbe5e;
+  -webkit-animation-delay: -4.8s;
+  animation-delay: -4.8s;
+}
+
+.text:nth-child(5n+5) {
+  stroke: #FFFFFF;
+  -webkit-animation-delay: -6s;
+  animation-delay: -6s;
+}
+
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+
+/* Other styles */
+html,
+body {
+  height: 100%;
+  font-family: 'Noto Sans Thai', sans-serif !important;
+}
+
+header {
+  width: 100%;
+}
+
+body {
+  background: #151515;
+  background-size: 0.2em 100%;
+  margin: 0;
+}
+
+svg {
+  font: 5em/1 Open Sans, Impact;
+  text-transform: uppercase;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 50%;
+}
+
+a {
+  text-decoration: none;
+  color: #9A1118;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.tab {
+  overflow: hidden;
+  background-color: #5f080d;
+}
+
+.tab button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 14px 16px;
+  width: 50%;
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #FFF;
+}
+
+.tab button.active,
+.tab button:hover {
+  background-color: #FFFFFF;
+  color: #9A1118
+}
+
+.tab-content {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.tab-content[data-tab='1'] {
+  height: 720px;
+}
+
+.tab-content[data-tab='2'] {
+  padding: 1rem;
+}
+
+#AddWinnerTypeA {
+  width: 75%;
+  position: relative;
+  margin-top: 5%;
+  padding: 3rem;
+  font-size: 2rem;
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-weight: 600;
+  background: linear-gradient(90deg, #5f080d, transparent) #9A1118;
+  transition: background-color 1s;
+  color: #FFFFFF;
+  border: 0px;
+  border-radius: 8px;
+}
+
+#AddWinnerTypeA:hover {
+  background-color: #FF0000;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5f080d;
+  color: white;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 1rem 16px;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #5f080d;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close, .close_winner {
+  color: #FFFFFF;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus,
+.close_winner:hover,
+.close_winner:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  text-align: center;
+  font-weight: 600;
+  background-color: #EEEEEE;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #CCC;
+}
+
+.table tbody tr:hover td {
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+.table th {
+  padding: 0.5rem;
+}
+
+.table td {
+  padding: 0.5rem;
+}
+
+.form-control {
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-size: 1.2rem;
+  width: calc(100% - 1rem);
+  padding: 8px;
+}
+
+.WinnerA {
+  text-align: center !important;
+}
+
+.form-control[disabled] {
+  color: #888;
+}
+
+.form-control:hover,
+.form-control:focus {
+  border-color: #127cdf
+}
+
+.form-success {
+  border-color: #02813b !important;
+}
+
+.table-success {
+  color: #02813b;
+  background-color: rgba(2, 129, 59, 0.15);
+}
+
+.form-danger {
+  border-color: #9A1118 !important;
+}
+
+.btn {
+  border: 0px;
+  padding: 0.75rem 0.25rem 0.75rem 0.25rem;
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-size: 1.2rem;
+  width: 100%;
+  border-radius: 4px;
+}
+.btn:hover, .btn:focus {
+  cursor: pointer;
+}
+
+.btn-random {
+  background: linear-gradient(90deg, #5f080d, transparent) #9A1118;
+  color: #FFFFFF;
+  transition: background-color 1s;
+}
+
+.btn-random:hover, .btn-random:focus {
+  background-color: #FF0000;
+}
+
+.btn-winner {
+  background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
+  color: #FFFFFF;
+  transition: background-color 1s;
+}
